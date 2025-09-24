@@ -1,0 +1,409 @@
+
+ 
+.responsive-tilted-image {
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+  transition: transform 0.3s ease;
+}
+.responsive-tilted-image.reversed {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.responsive-tilted-image:hover {
+  transform: scale(1.05);
+}
+.image-container {
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .responsive-tilted-image,
+  .responsive-tilted-image.reversed {
+    clip-path: none !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+  .image-container {
+    height: auto !important;
+  }
+  .custom-row {
+    flex-direction: column !important;
+    min-height: auto;
+  }
+}
+/* //////////////////////////////////////////////////////////////////// */
+.copy-wrapper { position: relative; display: inline-block; }
+.copiedToast {
+  display: none;
+  position: absolute;
+  top: 70%;
+  right: -95px;
+  background-color: #f5deb3;
+  color: #000;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.copiedToast.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav-link:focus {
+  border: 1px solid rgb(255, 255, 255);    
+  border-radius: 5px;           
+  padding: 4px 8px;           
+  transition: 0.1s ease-in-out; 
+}
+.login-hover:hover {
+  background-color: black !important;
+  color: white !important;
+  transition: 0.3s ease;
+}
+.custom-width {
+   width: 300px;
+}
+/* log in box */
+#loginModalLabel {
+   font-family: "Noto Serif", serif;
+  font-weight: 700;                               
+  font-size: 24px;   
+  color: #403f3f;  
+  background-color: #fff;                           
+}
+.saf{ 
+  font-family:"Dancing Script",serif;
+}
+.carousel-item img{
+  height: 100vh;
+}
+.icon-hover i {
+  transition: color 0.3s ease;
+  color: rgb(129, 128, 127);
+}
+.icon-hover:hover i {
+  color: #ffc107;
+}
+.sec{font-family: "Lobster", sans-serif;}
+.custom-btn {
+  transition: all 0.3s ease;
+  border: 2px solid #ffc107;
+  color: #fff;
+}
+.custom-btn:hover {
+  background-color: #ffc107;
+  color: #000; 
+  border-color: #ffc107;
+}
+.carousel-caption{
+  background-color:rgba(42, 41, 41, 0.5);
+  border-radius: 10px;
+  padding: 50px;
+  border: 0.2px solid white;
+}
+@media (max-width: 767px) {
+  .carousel-caption {
+    padding: 20px;
+    font-size: 14px;
+  }
+  .carousel-caption h5 {
+    font-size: 18px;
+  }
+  .carousel-caption p {
+    font-size: 12px;
+  }
+}
+/* ///////// end- header section///////////////////// */
+.bg-inner-gradient {
+  background: linear-gradient(to top, rgba(175, 189, 51, 0.5), transparent); 
+}
+.custom-title {
+  color: #ffc800; 
+  font-family: "Gravitas One", serif; 
+  font-weight: 700;
+}
+.animal{
+  font-family: "DM Serif Display", serif;
+}
+.meet{
+  font-family: "Abril Fatface", serif;
+}
+.btn1{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.underline-on-hover:hover {
+  text-decoration: underline;
+}
+.accordion-button:focus,
+.accordion-button:active {
+  box-shadow: none !important;
+  outline: none !important;
+}
+.accordion-button:not(.collapsed) {
+  background-color: transparent !important;
+  color: inherit;
+}
+.accordion-button {
+  background-color: transparent;
+  color: #2d491f; 
+  font-weight: 600;
+}
+.sa{
+  font-family: "Gravitas One", serif;
+}
+.card-content {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  z-index: 3;
+}
+.card-content .avatar {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid white;
+  border-radius: 40%;
+  border: 1px solid white;
+  margin-bottom: 8px;
+}
+.card-top-text {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  z-index: 3;
+  color: rgb(255, 255, 255);
+  max-width: 90%;
+}
+.card-bg-img {
+  transition: transform 0.4s ease;
+}
+.card1:hover .card-bg-img {
+  transform: scale(0.95); 
+}
+.bg-image-section2 {
+     height: 400px;
+    width: 100%;
+    position: relative;
+    background-image: url('../images/zebra-wild.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+/* ////////////// photoes 9////////////////// */
+.social-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: #ffc107;
+  opacity: 0;
+  transition: 0.4s;
+
+}
+.social-card:hover::after {
+  height: 100%;
+  width: 100%;
+  transition: 2s;
+  opacity: 0.2;
+}
+.social-card::before {
+  content: '';
+  position: absolute;
+  bottom:0;
+  right: 0;
+  width: 0;
+  height: 0;
+  background-color: #ffc107;
+  opacity: 0;
+  transition: 0.4s;
+}
+.social-card{
+  border-radius: 8px;
+}
+.social-card:hover::before {
+  height: 100%;
+  width: 100%;
+  transition: 2s;
+  opacity: 0.2;
+}
+.social-card::after,
+.social-card::before {
+  pointer-events: none;
+}
+/* hover/focus/active effect للزرار داخل الكارد */
+.card .btn-animated {
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.15s ease;
+}
+
+/* override لون btn-warning عند التحويم/التركيز/الضغط */
+.card .btn-animated:hover,
+.card .btn-animated:focus,
+.card .btn-animated:active {
+  background-color: #ffffff !important;
+  border-color: rgb(222, 184, 45) !important;
+  color: #0f0f0f !important;
+  box-shadow: none !important;
+  transform: translateY(-2px);
+}
+
+/* للتأكد من تجربة موبايل: تأثير عند اللمس (active) */
+@media (max-width: 767px) {
+  .card .btn-animated:active {
+    background-color: #ffffff !important;
+    color: #050505 !important;
+  }
+}
+
+/* تحسين الوصولية: إبراز عند التنقل بالكيبورد */
+.card .btn-animated:focus {
+  outline: 3px solid rgba(255,255,255,0.12);
+  outline-offset: 2px;
+}
+/* ///////////// photo 3 card (3)/////////////////// */
+.card1 {
+  position: relative;
+  height: 500px;
+  color: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.card1:hover .overlay {
+  transform: scale(0.95);
+  transition: transform 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+.card-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  border-radius: 30px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 2;
+  border-radius: 30px;
+  transition: transform 0.4s ease;
+  transform-origin: center center;
+}
+/* /////////////////////////////////////// */
+.bg-image-section {
+    height: 400px;
+    width: 100%;
+    position: relative;
+    background-image: url('../images/beautiful-natural-landscape.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+.gradient-text {
+  font-family: "Gravitas One", serif;
+  font-weight: bold;
+  font-size: 3rem;
+  background: linear-gradient(to bottom, #18871a, #d3e6b9); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+.card-icon {
+ font-size: 60px;
+ color: #007bff;
+}
+/* ///////////// whatsapp -link- instgram ///////////////// */
+.custom-card {
+ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+ border-radius: 12px; 
+ transition: transform 0.3s ease, box-shadow 0.3s ease; 
+ background-color: #fff;
+}
+.custom-row {
+  margin-bottom: 0 !important;
+}
+.custom-card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+.card-title {
+ font-size: 18px;
+ font-weight: 600;
+ margin-bottom: 10px;
+ font-weight: bold;
+}
+.underline-hover:hover {
+  text-decoration: underline;
+}
+a {
+ text-decoration: none;
+ color: #007bff;
+ font-weight: 500;
+}
+/* /////////////////////////////// */
+.hr1{
+    height: 1px;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    background-color:rgba(255, 255, 255, 0.4);
+}
+.avatar {
+height: 80px;
+ width: 80px;
+ object-fit: contain;
+}
+ @media (max-width: 576px) {
+    .custom-header {
+      height: 25vh !important; 
+      
+    }
+    .custom-header h1 {
+      font-size: 2.5rem; /* تكبير حجم العنوان */
+      text-align: center !important;
+    }
+  }
+/* //////////////////////////////////////////////// */
+.social-card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Times New Roman', Times, serif;
+}
+.social-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* تأثير hover للينك */
+.social-link-hover:hover {
+  text-decoration: underline !important;
+  color: #0056b3 !important;
+}
+/* ///////////////// last section ////////////////////// */
+
+.footer-hover {
+  transition: color 0.3s ease-in-out;
+}
+.footer-hover:hover {
+  color: yellow !important;
+}
+/* موبايل: نخلي الـ hover يشتغل باللمس */
+@media (max-width: 767px) {
+  .footer-hover:active {
+    color: yellow !important;
+  }
+}

@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS (نسخة واحدة فقط) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Gravitas+One&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+  <!-- ملفاتك الخاصة -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <title>Document</title>
+  <style>
+
+  .circle {
+      position: fixed;               
+  z-index: 9999;                 
+  border-radius: 50%;
+  pointer-events: none;
+  animation: pulse 0.8s ease-out forwards;
+  opacity: 0.6;
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: pulse 0.8s ease-out forwards;
+    opacity: 0.6;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+
+<body> 
+  
+<!-- header-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+  <div class="container-fluid">
+    <img src="images/WhatsApp Image 2025-09-10 at 4.55.36 AM.jpeg" width="50" height="50" class="rounded-circle">
+    <a class="navbar-brand saf m-2 text-warning fs-4 fw-bold" href="#">SAFARI</a>
+    <div class="vr bg-white mx-3 "></div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Travel</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Science & Nature
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Space & Astronomy</a></li>
+            <li><a class="dropdown-item" href="#">Climate Change</a></li>
+            <li><a class="dropdown-item" href="#">Dinosaurs & Fossils</a></li>
+            <li><a class="dropdown-item" href="#">Conservation</a></li>
+            <li><a class="dropdown-item" href="#">Oceans</a></li>
+            <li><a class="dropdown-item" href="#">Tech & Innovation</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">All Science & Nature <span>&rarr;</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Lifestyle</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Shows</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">More</a>
+        </li>
+      </ul>
+      
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button> 
+      </form>
+      <button type="button" class="btn btn-warning ms-2 mt-2 mt-lg-0 login-hover" data-bs-toggle="modal"data-bs-target="#loginModal"> Log In</button>
+    </div>
+  </div>
+</nav>
+
+<!--sign in-->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Log In</h5>
+        <button type="button" class="btn-close btn-warning" data-bs-dismiss="modal" aria-label="close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="username" class="form-label">Email address</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter Your Email">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="•••••••">
+          </div>
+            <div class="form-check mb-3">
+       <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+         <label class="form-check-label" for="rememberMe">Remember Me
+       </label>
+      </div>
+        <div class="d-flex justify-content-center my-4">
+          <button type="submit" class="btn btn-warning  w-100 login-hover">Log In</button>
+       </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- photoes-->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/taiger.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+        <h5>The Sumatran Tiger</h5>
+        <p>The Sumatran tiger is a subspecies of tiger native to the Indonesian island of Sumatra. It’s the smallest of the tigers, possibly because it evolved on an isolated island habitat. </p>
+        <a href="#" class="btn btn-outline-light custom-btn">Learn More</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/elephant.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+        <h5>African Elephants</h5>
+        <p>OAfrican elephants are the largest land animals on Earth. They are slightly larger than their Asian cousins and can be identified by their larger ears that look somewhat like the continent of Africa.</p>
+        <a href="#" class="btn btn-outline-light custom-btn">Learn More</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/closeup-shot-two-zebras-cuddling.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+        <h5>Zebra</h5>
+        <p>Zebras stick together in herds. Within a herd, zebras tend to stay together in smaller family groups. Families are generally made up of a male, several females, and their young.</p>
+        <a href="#" class="btn btn-outline-light custom-btn">Learn More</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/photorealistic-view-wild-bear-its-natural-environment.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+        <h5>Brown Bear</h5>
+        <p>The awe-inspiring brown bear lives in the forests and mountains of northern North America, Europe, and Asia. It is the most widely distributed bear in the world.</p>
+        <a href="#" class="btn btn-outline-light custom-btn">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- icons-->
+<div class="position-fixed top-50 end-0 translate-middle-y d-flex flex-column align-items-center me-3 z-3 fs-5">
+  <a href="#" class="mb-3 icon-hover text-dark">
+    <i class="fa-brands fa-square-facebook fa-2x"></i>
+  </a>
+  <a href="#" class="mb-3 icon-hover text-dark">
+    <i class="fa-brands fa-square-twitter fa-2x"></i>
+  </a>
+  <a href="#" class="mb-3 icon-hover text-dark">
+    <i class="fa-brands fa-whatsapp fa-2x"></i>
+  </a>
+  <a href="#" class="mb-3 icon-hover text-dark">
+    <i class="fa-brands fa-instagram fa-2x"></i>
+  </a>
+    <a href="#" class="mb-3 icon-hover text-dark">
+    <i class="fa-brands fa-linkedin fa-2x"></i>
+  </a>
+</div>
+<!-- section 2-->
+<div class="d-flex align-items-start vh-90 p-7">
+    <div class="p-4 border rounded shadow w-100 bg-inner-gradient">
+      <h1 class="mb-3 custom-title">Welcome to SAFARI</h1>
+      <p class="mb-4">Wildfires are raging across California, as the state faces a record-breaking fire season due to the destructive combination of a heat wave and strong winds. Blazes have burned more than two million acres of land—the most on record for a single wildfire season—and destroyed more than 3,300 structures so far. Meanwhile, warnings for severe fire danger have been issued across the West Coast of the United States, including in Oregon and Washington State.
+It’s unclear how many animals have died—such data is not tracked consistently across regions—but it’s clear that even species that have evolved to thrive in habitats that burn regularly are facing new challenges.</p>
+      <button class="btn btn-warning login-hover">Read More</button>
+    </div>
+  </div>
+<hr>
+<!-- section 3-->
+<div class="d-flex justify-content-center align-items-center border rounded-3 w-100 bg-success p-2 custom-header">
+  <h1 class="animal mb-3 text-light">Privacy Policy</h1>
+</div> 
+<br>
+<!-- section 4 (3) paragraph-->
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="btn1 accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        WHO WE ARE
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Our company includes many different brands. When you visit, shop, or create an account with us, or use sites and applications, your information is controlled by a<span class="text-decoration-underline"> member of The Walt Disney Family of Companies.</span><span class="text-success underline-on-hover"> The list of relevant data controllers can be found here.</span>  </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingTwo">
+      <button class="btn1 accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+       DATA SECURITY, INTEGRITY, AND RETENTION
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">The security, integrity, and confidentiality of your information are extremely important to us. We have implemented technical, administrative, and physical security measures that are designed to protect guest information from unauthorized access, disclosure, use, and modification. We regularly review our security procedures to consider appropriate new technology and methods. Please be aware that, despite our best efforts, no security measures are perfect or impenetrable. We will retain your <span class="text-decoration-underline"> personal information</span> for the length of time needed to fulfill the purposes outlined in this privacy policy unless a longer retention period is required or permitted by law.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="btn1 accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        BRAZILIAN RESIDENTS' RIGHTS
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Notice to Brazilian Residents: If you are a Brazilian resident, you may have certain additional privacy rights. Visit our <span class="text-success underline-on-hover">Data Protection in Brazil</span>page for more information. </div>
+    </div>
+  </div>
+</div>
+<hr>
+<!-- section 5-->
+<!-- ✅ Section 6 -->
+<div class="d-flex justify-content-center align-items-center border rounded-3 w-100 bg-success p-2 custom-header">
+  <h1 class="meet mb-3 text-light">Translate From Arabic To English</h1>
+</div> 
+<div class="d-flex align-items-start">
+  <div class="sec p-4 border rounded shadow w-100 bg-light bg-inner-gradient">
+    <p class="mb-2 fs-4">Write And Translate <strong class="text-warning">Press Here</strong></p>
+
+    <!-- زرار الكوبي مع الرسالة -->
+    <div class="copy-wrapper">
+      <button type="button" class="btn btn-warning copyBtn login-hover" data-toast="toast1">Copy</button>
+      <div id="toast1" class="copiedToast">Copied!!</div>
+    </div>
+
+    <!-- Textarea -->
+    <div class="form-floating mt-3">
+      <textarea class="form-control" placeholder="Leave a comment here" style="height: 150px"></textarea>
+      <label>Translate...</label>
+    </div>
+  </div>
+</div>
+
+<hr class="my-4">
+<!-- ✅ Section 7 -->
+<div class="section7 position-relative">
+  <div class="d-flex justify-content-center align-items-center border rounded-3 w-100 bg-success p-2 custom-header">
+    <h1 class="meet mb-3 text-light">Translate From Arabic To French</h1>
+  </div>
+  <div class="d-flex align-items-start">
+    <div class="sec p-4 border rounded shadow w-100 bg-light bg-inner-gradient">
+      <p class="mb-2 fs-4">Write And Translate <strong class="text-warning">Press Here</strong></p>
+
+      <div class="copy-wrapper">
+        <button type="button" class="btn btn-warning copyBtn login-hover" data-toast="toast2">Copy</button>
+        <div id="toast2" class="copiedToast">Copied!!</div>
+      </div>
+
+      <div class="form-floating mt-3">
+        <textarea class="form-control" placeholder="Leave a comment here" style="height: 150px"></textarea>
+        <label>Translate...</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="my-4">
+<!-- ✅ Section 8 -->
+<div class="section8 position-relative">
+  <div class="d-flex justify-content-center align-items-center border rounded-3 w-100 bg-success p-2 custom-header">
+    <h1 class="meet mb-3 text-light">Translate From Arabic To German</h1>
+  </div>
+  <div class="d-flex align-items-start">
+    <div class="sec p-4 border rounded shadow w-100 bg-light bg-inner-gradient">
+      <p class="mb-2 fs-4">Write And Translate <strong class="text-warning">Press Here</strong></p>
+
+      <div class="copy-wrapper">
+        <button type="button" class="btn btn-warning copyBtn login-hover" data-toast="toast3">Copy</button>
+        <div id="toast3" class="copiedToast">Copied!!</div>
+      </div>
+
+      <div class="form-floating mt-3">
+        <textarea class="form-control" placeholder="Leave a comment here" style="height: 150px"></textarea>
+        <label>Translate...</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ Modal واحد فقط -->
+<div class="modal fade" id="myModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-warning fs-3">Safari</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">The Message Copied</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" id="closeModalBtn" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="my-4">
+
+<!--section 9 photo  -->
+<div class="bg-image-section d-flex align-items-center justify-content-center text-white"></div> <br>
+
+<div class="d-flex justify-content-center align-items-center border rounded-3 w-100 bg-success p-2 custom-header " >
+  <h1 class="meet mb-3 text-light">Animal Pictures and Facts</h1>
+</div> <br> <br>
+<!-- photoes -->
+<div class="container">
+  <div class="row g-4">
+
+    <div class="col-md-4 d-flex">
+      <div class="card social-card shadow-lg flex-fill d-flex flex-column p-2">
+        <img src="images/hylarana-picturata-frog-closeup-moss-with-black-background-indonesian-tree-frog.jpg"
+             class="card-img-top mb-3 card"
+             alt="Frog Image" style="height: 400px; object-fit: cover; top:-10px">
+        <div class="card-body d-flex flex-column p-2">
+          <h5 class="card-title">Puerto Rican crested toads</h5>
+          <div class="text-end mt-auto mb-3">
+            <a href="#" class="btn btn-warning btn-animated">
+              <span>LEARN MORE</span>
+            </a>
+          </div>
+          <p class="card-text">
+            A critically endangered Puerto Rican crested toad at Omaha's Henry Doorly Zoo and Aquarium in Nebraska.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 d-flex">
+      <div class="card social-card shadow-lg flex-fill d-flex flex-column p-2">
+        <img src="images/vertical-shot-exotic-black-bird-dried-grass-field.jpg"
+             class="card-img-top mb-3 card"
+             alt="Partridge" style="height: 400px; object-fit: cover; top:-10px">
+        <div class="card-body d-flex flex-column p-2">
+          <h5 class="card-title">Partridges</h5>
+          <div class="text-end mt-auto mb-3">
+            <a href="#" class="btn btn-warning btn-animated">
+              <span>LEARN MORE</span>
+            </a>
+          </div>
+          <p class="card-text">
+            The red-legged partridge, which is gray, black, and chestnut in color, is native to continental Europe.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 d-flex">
+      <div class="card social-card shadow-lg flex-fill d-flex flex-column p-2">
+        <img src="images/closeup-shot-tiger-shovelnose-catfish-swimming-aquarium.jpg"
+             class="card-img-top mb-3 card"
+             alt="Northern snakehead" style="height: 400px; object-fit: cover; top:-10px">
+        <div class="card-body d-flex flex-column p-2">
+          <h5 class="card-title">Northern snakehead</h5>
+          <div class="text-end mt-auto mb-3">
+            <a href="#" class="btn btn-warning btn-animated">
+              <span>LEARN MORE</span>
+            </a>
+          </div>
+          <p class="card-text">
+            The northern snakehead (Channa argus) is known for being able to survive on land for days at a time.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+ <br> <br>
+
+<div class="container">
+  <div class="row g-4">
+
+    <div class="col-md-4 d-flex">
+      <div class="card social-card shadow-lg flex-fill d-flex flex-column p-2">
+        <img src="images/realistic-spider-nature (1).jpg"
+             class="card-img-top mb-3 card"
+             alt="Camel Spider" style="height: 400px; top:-10px">
+        <div class="card-body d-flex flex-column p-2">
+          <h5 class="card-title">Camel Spider</h5>
+          <div class="text-end mt-auto mb-3">
+            <a href="#" class="btn btn-warning btn-animated">
+              <span>LEARN MORE</span>
+            </a>
+          </div>
+          <p class="card-text">
+            Camel spiders became an Internet sensation during the Iraq war of 2003, when rumors of their bloodthirsty nature began to circulate online. The myths are untrue.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 d-flex">
+      <div class="card social-card shadow-lg flex-fill d-flex flex-column p-2">
+        <img src="images/close-up-otter-wild.jpg"
+             class="card-img-top mb-3 card"
+             alt="Beaver" style="height: 400px; top:-10px">
+        <div class="card-body d-flex flex-column p-2">
+          <h5 class="card-title">Beaver</h5>
+          <div class="text-end mt-auto mb-3">
+            <a href="#" class="btn btn-warning btn-animated">
+              <span>LEARN MORE</span>
+            </a>
+          </div>
+          <p class="card-text">
+            Beavers are famously busy, and they turn their talents to reengineering the landscape as few other animals can. When sites are available, beavers burrow in the banks of rivers and lakes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 d-flex">
+      <div class="card social-card shadow-lg flex-fill d-flex flex-column p-2">
+        <img src="images/beautiful-whale-crossing-ocean.jpg"
+             class="card-img-top mb-3 card"
+             alt="Orca Whale" style="height: 400px; top:-10px">
+        <div class="card-body d-flex flex-column p-2">
+          <h5 class="card-title">An Orca Whale</h5>
+          <div class="text-end mt-auto mb-3">
+            <a href="#" class="btn btn-warning btn-animated">
+              <span>LEARN MORE</span>
+            </a>
+          </div>
+          <p class="card-text">
+            Experts say the whales seem to learn to play with boats from a young age. "Believe me: if they wanted to sink the boats, they'd be sinking the boat."
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div> <br> <br>
+
+<div class="container">
+  <div class="row justify-content-center" style="gap: 150px;">
+    <div class="col-md-4 d-flex">
+      <div class="card social-card shadow-lg flex-fill d-flex flex-column p-2">
+        <img src="images/3663993347a837bbfa2d78ffbbefd689.jpg"
+             class="card-img-top mb-3"
+             alt="Caracal" style="height: 400px; margin-top: -8px;">
+
+        <div class="card-body p-0 d-flex flex-column">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="card-title m-0" style="padding-bottom: 40px;">Caracal</h5>
+            <a href="#" class="btn btn-warning btn-animated mt-4">
+              <span>LEARN MORE</span>
+            </a>
+          </div>
+
+          <!-- المحتوى -->
+          <p class="card-text">
+            A caracal crouches in the tall grass, eyeing a bird perched on a nearby shrub. 
+            Suddenly the wild cat bursts from her hiding spot and bolts toward the fowl. 
+            As the bird takes off, so does the caracal.Most caracals grow about three feet long and can weigh over 40 pounds.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="col-md-4 d-flex">
+      <div class="card social-card shadow-lg flex-fill d-flex flex-column p-2">
+        <img src="images/cute-foxes-nature.jpg"
+             class="card-img-top mb-3 card"
+             alt="Fennec Fox" style="height: 400px; margin-top: -8px;">
+
+        <div class="card-body p-2 d-flex flex-column">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="card-title m-0" style="padding-bottom: 40px;">Fennec Fox</h5>
+            <a href="#" class="btn btn-warning btn-animated ">
+              <span>LEARN MORE</span>
+            </a>
+          </div>
+
+          <p class="card-text">
+            Fennec foxes are sometimes called "desert foxes" because they live 
+            in desert zones of North Africa and the Sinai and Arabian peninsulas. 
+            They are nocturnal and avoid the daytime heat of the desert environment. 
+            Their batlike ears radiate body heat and help keep the foxes cool. 
+            
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+
+<div class="bg-image-section2 d-flex align-items-center justify-content-center text-white"></div> <br>
+
+<div class="d-flex justify-content-center align-items-center border rounded-3 w-100 bg-success p-2 custom-header">
+  <h1 class="meet mb-3 text-light">Our Leadership</h1>
+</div> <br> <br>
+
+
+<div class="container my-5">
+  <div class="row g-5">
+
+    <!-- Card 1 -->
+    <div class="col-md-4">
+      <div class="card1 shadow">
+        <img src="images/Jill-Tiefenthaler_20250429_0084_2400x2400_credit-Rebecca-Hale-National-Geographic.jpg.jpg"
+             class="card-bg-img" alt="Background 1">
+        <div class="overlay"></div>
+        <div class="card-top-text p-3">
+          <p class="mb-0 small">
+            Dr. Jill Tiefenthaler has set a bold vision for one of the world’s most iconic organizations.
+          </p>
+        </div>
+        <div class="card-content p-3">
+          <img src="images/Jill-Tiefenthaler_20250429_0084_2400x2400_credit-Rebecca-Hale-National-Geographic.jpg.jpg"
+               class="avatar" alt="Avatar 1">
+          <h5 class="mb-1">Jill Tiefenthaler</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-4">
+      <div class="card1 shadow">
+        <img src="images/Ian-Miller_2400x2400_credit-Rebecca-Hale-National-Geographic-2048x2048.jpg"
+             class="card-bg-img" alt="Background 2">
+        <div class="overlay"></div>
+        <div class="card-top-text p-3">
+          <p class="mb-0 small">
+            Miller spent 15 years at the Denver Museum of Nature & Science.
+          </p>
+        </div>
+        <div class="card-content p-3">
+          <img src="images/Ian-Miller_2400x2400_credit-Rebecca-Hale-National-Geographic-2048x2048.jpg"
+               class="avatar" alt="Avatar 2">
+          <h5 class="mb-1">Ian Miller</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-4">
+      <div class="card1 shadow">
+        <img src="images/Kaitlin-Yarnall--2048x2048.jpeg" class="card-bg-img" alt="Background 3">
+        <div class="overlay"></div>
+        <div class="card-top-text p-3">
+          <p class="mb-0 small">
+            Yarnall has been a keynote speaker at conferences around the globe.
+          </p>
+        </div>
+        <div class="card-content p-3">
+          <img src="images/Kaitlin-Yarnall--2048x2048.jpeg" class="avatar" alt="Avatar 3">
+          <h5 class="mb-1">Kaitlin Yarnall</h5>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<h1 class="gradient-text text-center mt-5 p-sm-5">Become A Member</h1>
+
+<!-- photo 1-->
+<div class="container my-3">
+  <div class="row flex-row-reverse align-items-stretch border rounded shadow overflow-hidden custom-row">
+
+    <div class="col-12 col-md-4 d-flex image-container p-0">
+      <img src="images/underwater-portrait-scuba-diver-exploring-sea-world.jpg"
+           alt="صورة"
+           class="img-fluid w-100 h-100 responsive-tilted-image reversed">
+    </div>
+
+    <div class="col-12 col-md-8 d-flex flex-column p-3">
+      <h2 class="text-success mb-3 mt-2">Our Planet Depends on You</h2>
+      <h6 class="mb-3">Mon, May 25th 2020</h6>
+
+      <div class="progress mb-3" style="width: 100px; height: 8px; margin-left: 20px;">
+        <div class="progress-bar progress-bar-striped bg-warning"
+             role="progressbar"
+             style="width: 100%"
+             aria-valuenow="10" aria-valuemin="0" aria-valuemax="25">
+        </div>
+      </div>
+
+      <p>
+        Our global community is composed of philanthropic, passionate, and determined changemakers — like you — from every corner of the globe.
+        When you become a National Geographic Society member, you have the opportunity to further your impact, affect change, and leave a lasting impression on this earth. Your generosity is a commitment to curiosity — it helps us explore and protect the wonder of our world — all while receiving special benefits.
+      </p>
+
+      <div class="mt-auto">
+        <a href="#" class="btn btn-success mb-2">🎙️podcast</a>
+        <a href="#" class="btn btn-success mb-2">🕒15 mins</a>
+        <a href="#" class="btn btn-success mb-2">⏵Play Episode</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- photo 2-->
+<div class="container my-3">
+  <div class="row custom-row align-items-stretch border rounded shadow overflow-hidden">
+
+    <div class="col-12 col-md-4 d-flex image-container">
+      <img src="images/person-caring-protecting-mother-earth-earth-day.jpg"
+           alt="صورة"
+           class="img-fluid w-100 h-100 responsive-tilted-image">
+    </div>
+
+    <div class="col-12 col-md-8 d-flex flex-column p-3">
+      <h2 class="text-success mb-3 mt-2">Make a Difference</h2>
+      <h6 class="mb-3">Mon, May 25th 2020</h6>
+
+      <div class="progress mb-3" style="width: 100px; height: 8px; margin-left: 20px;">
+        <div class="progress-bar progress-bar-striped bg-warning"
+             role="progressbar"
+             style="width: 100%"
+             aria-valuenow="10" aria-valuemin="0" aria-valuemax="25">
+        </div>
+      </div>
+
+      <p>
+        We are a global non-profit that funds the best and brightest individuals around the world dedicated to our mission to use the power of science, exploration, education, and storytelling to illuminate and protect the wonder of our world.Our Explorers are advancing new knowledge and leading conservation programs with outsized impact to protect nature, wildlife, and historical places. They’re documenting the wonder of our world—including its beauty, mystery, and the threats it faces—and inspiring people to care and act on behalf of our planet and its people
+      </p>
+
+      <div class="mt-auto">
+        <a href="#" class="btn btn-success mb-2">🎙️podcast</a>
+        <a href="#" class="btn btn-success mb-2">🕒15 mins</a>
+        <a href="#" class="btn btn-success mb-2">⏵Play Episode</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--photo 3-->
+<div class="container my-3">
+  <div class="row custom-row align-items-stretch border rounded shadow overflow-hidden flex-row-reverse">
+
+    <div class="col-12 col-md-4 d-flex image-container">
+      <img src="images/boys-throwing-snowballs-right-girls.jpg"
+           alt="صورة"
+           class="img-fluid w-100 h-100 responsive-tilted-image reversed">
+    </div>
+
+    <div class="col-12 col-md-8 d-flex flex-column p-3">
+      <h2 class="text-success mb-3 mt-2">Invest in bold Explorers</h2>
+      <h6 class="mb-3">Mon, May 25th 2020</h6>
+
+      <div class="progress mb-3" style="width: 100px; height: 8px; margin-left: 20px;">
+        <div class="progress-bar progress-bar-striped bg-warning"
+             role="progressbar"
+             style="width: 100%"
+             aria-valuenow="10" aria-valuemin="0" aria-valuemax="25">
+        </div>
+      </div>
+
+      <p>
+       We have awarded more than 15,000 grants since our founding in 1888.The recipients of these grants, who we call National Geographic Explorers, are a community of changemakers from around the world working to support our mission to illuminate and protect the wonder of our world.Our Explorers are people of all walks of life from all over the world. They don’t just venture to the tops of mountains or the bottom of the ocean.  They’re also in the lab diving deep into the microscopic world, in their local communities capturing the stories of a fishing village, or in the classroom sharing their discoveries with the next generation. 
+      </p>
+
+      <div class="mt-auto">
+        <a href="#" class="btn btn-success mb-2">🎙️podcast</a>
+        <a href="#" class="btn btn-success mb-2">🕒15 mins</a>
+        <a href="#" class="btn btn-success mb-2">⏵Play Episode</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--photo 4-->
+<div class="container my-3">
+  <div class="row custom-row align-items-stretch border rounded shadow overflow-hidden">
+
+    <div class="col-12 col-md-4 d-flex image-container">
+      <img src="images/full-shot-happy-man-outdoors.jpg"
+           alt="صورة"
+           class="img-fluid w-100 h-100 responsive-tilted-image">
+    </div>
+
+    <div class="col-12 col-md-8 d-flex flex-column p-3">
+      <h2 class="text-success mb-3 mt-2">Changemakers and innovators</h2>
+      <h6 class="mb-3">Mon, May 25th 2020</h6>
+
+      <div class="progress mb-3" style="width: 100px; height: 8px; margin-left: 20px;">
+        <div class="progress-bar progress-bar-striped bg-warning"
+             role="progressbar"
+             style="width: 100%"
+             aria-valuenow="10" aria-valuemin="0" aria-valuemax="25">
+        </div>
+      </div>
+
+      <p>
+        The Principal Donors Society is the National Geographic Society’s highest designation for lifetime giving, recognizing individual, corporate, and foundation donors who have supported the Society through cumulative philanthropic support of $1 million or more. Principal Donors have distinguished themselves as the Society’s most loyal stewards, investing generously in scientific research, exploration, education, storytelling and Base Camp. Each fall, newly qualified Principal Donors will be invited to join the Society. New members will be inducted and celebrated at an event held in conjunction with Storytellers Summit.
+      </p>
+
+      <div class="mt-auto">
+        <a href="#" class="btn btn-success mb-2">🎙️podcast</a>
+        <a href="#" class="btn btn-success mb-2">🕒15 mins</a>
+        <a href="#" class="btn btn-success mb-2">⏵Play Episode</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Social Media Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col-12 col-sm-6 col-md-3  d-flex justify-content-center">
+        <div class="card w-75 text-center p-4 shadow rounded border border-dark social-card-hover">
+          <h5 class="fw-bold text-primary mb-3">Subscribe Now</h5>
+          <img src="images/vecteezy_round-whatsapp-logo-with-thick-white-border-and-long-shadow_42127143.png" 
+               alt="whatsapp" class="img-fluid mx-auto d-block mb-3" style="max-width: 90px;">
+          <a href="#" class="fw-bold link-primary text-decoration-none social-link-hover fs-5">Go To Link</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-12 col-sm-6 col-md-3  d-flex justify-content-center">
+        <div class="card w-75 text-center p-4 shadow rounded border border-dark social-card-hover">
+          <h5 class="fw-bold text-primary mb-3">Subscribe Now</h5>
+          <img src="images/vecteezy_instagram-social-media-app-3d-concept-logo-icon-isometric_44609258.png"
+               alt="instagram" class="img-fluid mx-auto d-block mb-3" style="max-width: 90px;">
+          <a href="#" class="fw-bold link-primary text-decoration-none social-link-hover fs-5">Go To Link</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-12 col-sm-6 col-md-3  d-flex justify-content-center">
+        <div class="card w-75 text-center p-4 shadow rounded border border-dark social-card-hover">
+          <h5 class="fw-bold text-primary mb-3">Subscribe Now</h5>
+          <img src="images/vecteezy_3d-linkedin-logo-icon-isolated-on-transparent-background_22498161.png"
+               alt="linkedin" class="img-fluid mx-auto d-block mb-3" style="max-width: 90px;">
+          <a href="#" class="fw-bold link-primary text-decoration-none social-link-hover fs-5">Go To Link</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-12 col-sm-6 col-md-3  d-flex justify-content-center">
+        <div class="card w-75 text-center p-4 shadow rounded border border-dark social-card-hover">
+          <h5 class="fw-bold text-primary mb-3">Subscribe Now</h5>
+          <img src="images/vecteezy_3d-twitter-logo-icon-with-blue-color-png_9995715.png"
+               alt="twitter" class="img-fluid mx-auto d-block mb-3" style="max-width: 90px;">
+          <a href="#" class="fw-bold link-primary text-decoration-none social-link-hover fs-5">Go To Link</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer Section -->
+<section class="bg-success text-light py-3">
+  <div class="container-fluid px-0">
+
+    <!-- Mobile Layout -->
+    <div class="d-block d-md-none">
+
+      <!-- الخط الأول -->
+      <hr class="border-white opacity-50 my-5" />
+
+      <!-- Zebra -->
+      <div class="text-center">
+        <img src="images/zebra_14612869.png" class="img-fluid mb-2" style="max-width: 100px;">
+        <p class="mb-2">Top Destinations</p>
+        <a href="#" class="d-block text-white footer-hover mb-1">Queen Elizabeth NP</a>
+        <a href="#" class="d-block text-white footer-hover mb-1">Tarangire National Park</a>
+        <a href="#" class="d-block text-white footer-hover mb-3">Serengeti National Park</a>
+      </div>
+      <hr class="border-white opacity-50 my-2" />
+
+      <!-- Elephant -->
+      <div class="text-center">
+        <img src="images/elephant_17754929.png" class="img-fluid mb-2" style="max-width: 100px;">
+        <p class="mb-2">Top Safaris</p>
+        <a href="#" class="d-block text-warning footer-hover mb-1">3 Days Masai Mara Outdoor</a>
+        <a href="#" class="d-block text-warning footer-hover mb-1">10 Days Beach & Serengeti</a>
+        <a href="#" class="d-block text-warning footer-hover mb-3">14 Days Kenya & Tanzania</a>
+      </div>
+      <hr class="border-white opacity-50 my-2" />
+
+      <!-- Toucan -->
+      <div class="text-center">
+        <img src="images/toucan_3243300.png" class="img-fluid mb-2" style="max-width: 100px;">
+        <p class="mb-2">Contacts</p>
+        <div class="mb-2">
+          <i class="fa-solid fa-envelope me-2"></i>
+          <span class="footer-hover">info@simbapakasafaris.com</span>
+        </div>
+        <div class="mb-2">
+          <i class="fa-solid fa-phone me-2"></i>
+          <span class="footer-hover">+254727325231</span>
+        </div>
+        <div class="mb-3">
+          <i class="fa-solid fa-map-marker-alt me-2"></i>
+          <span class="footer-hover">Mercantile House, 2nd floor room 230</span>
+        </div>
+      </div>
+      <hr class="border-white opacity-50 my-2" />
+
+    </div>
+
+    <!-- Desktop Layout -->
+    <div class="d-none d-md-block">
+
+      <hr class="border-white opacity-50 my-4" />  
+
+      <div class="row justify-content-center text-center mb-4">
+        <div class="col-md-4 d-flex justify-content-center gap-2">
+          <img src="images/zebra_14612869.png" class="img-fluid" style="max-width: 80px;">
+          <p class="mb-0 mt-4">Top Destinations</p>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center gap-2">
+          <img src="images/elephant_17754929.png" class="img-fluid" style="max-width: 80px;">
+          <p class="mb-0 mt-4">Top Safaris</p>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center gap-2">
+          <img src="images/toucan_3243300.png" class="img-fluid" style="max-width: 80px;">
+          <p class="mb-0 mt-4">Contacts</p>
+        </div>
+      </div>
+
+      <hr class="border-white opacity-50 my-3" />
+
+      <div class="row text-center">
+        <div class="col-md-4 mb-2">
+          <a href="#" class="d-block text-white footer-hover mb-1">Queen Elizabeth NP</a>
+          <a href="#" class="d-block text-white footer-hover mb-1">Tarangire National Park</a>
+          <a href="#" class="d-block text-white footer-hover">Serengeti National Park</a>
+        </div>
+        <div class="col-md-4 mb-2">
+          <a href="#" class="d-block text-warning footer-hover mb-1">3 Days Masai Mara Outdoor</a>
+          <a href="#" class="d-block text-warning footer-hover mb-1">10 Days Beach & Serengeti</a>
+          <a href="#" class="d-block text-warning footer-hover">14 Days Kenya & Tanzania</a>
+        </div>
+        <div class="col-md-4 mb-2">
+          <div class="d-flex justify-content-center align-items-center mb-2">
+            <i class="fa-solid fa-envelope me-2"></i>
+            <span class="footer-hover">info@simbapakasafaris.com</span>
+          </div>
+          <div class="d-flex justify-content-center align-items-center mb-2">
+            <i class="fa-solid fa-phone me-2"></i>
+            <span class="footer-hover">+254727325231</span>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-map-marker-alt me-2"></i>
+            <span class="footer-hover">Mercantile House, 2nd floor room 230</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-white opacity-50 my-3" />
+
+    </div>
+
+    <p class="text-center mb-0 fs-6 mt-3">
+      &copy; 2024 Simba Paka Safaris. Crafted by Team Web Africa
+    </p>
+  </div>
+</section>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+document.addEventListener('click', (e) => {
+  const colors = [
+    'rgba(241, 196, 15, 0.3)',
+    'rgba(230, 126, 34, 0.3)',
+    'rgba(231, 76, 60, 0.3)'
+  ];
+
+  for (let i = 0; i < 3; i++) {
+    const circle = document.createElement('div');
+    circle.classList.add('circle');
+
+    const size = 30 + i * 15;
+
+    circle.style.width = `${size}px`;
+    circle.style.height = `${size}px`;
+    circle.style.left = `${e.clientX - size / 2}px`;
+    circle.style.top = `${e.clientY - size / 2}px`;
+    circle.style.backgroundColor = colors[i];
+
+    document.body.appendChild(circle);
+
+    setTimeout(() => {
+      circle.remove();
+    }, 800);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".copyBtn");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const toastId = btn.getAttribute("data-toast");
+      const toast = document.getElementById(toastId);
+
+      // Show toast
+      toast.style.display = "block";
+      setTimeout(() => toast.classList.add("show"), 10);
+
+      // Show modal
+      const myModal = new bootstrap.Modal(document.getElementById("myModal"));
+      myModal.show();
+
+      // عند الضغط على close نخفي التوست
+      closeModalBtn.onclick = () => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.style.display = "none", 300);
+      };
+    });
+  });
+});
+
+  document.querySelectorAll(".footer-hover").forEach(el => {
+    el.addEventListener("touchstart", () => {
+      el.style.color = "yellow";
+    });
+    el.addEventListener("touchend", () => {
+      setTimeout(() => {
+        el.style.color = ""; // يرجع اللون الأصلي بعد ثانية
+      }, 1000);
+    });
+  });
+
+</script>
+
+</body>
+</html>
