@@ -1,5 +1,19 @@
+.circle {
+  position: fixed;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.8s ease-out forwards;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
 
- 
 .responsive-tilted-image {
   object-fit: cover;
   clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
@@ -31,28 +45,33 @@
     min-height: auto;
   }
 }
+.custom-row {
+  box-shadow: 10px 8px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+}
 /* //////////////////////////////////////////////////////////////////// */
-.copy-wrapper { position: relative; display: inline-block; }
 .copiedToast {
   display: none;
-  position: absolute;
-  top: 70%;
-  right: -95px;
-  background-color: #f5deb3;
-  color: #000;
-  border-radius: 20px;
-  padding: 8px 20px;
-  font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  z-index: 2000;
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  background-color: rgb(253, 235, 155);
+  color: #2a2828;
+  padding: 2px 40px;
+  border-radius: 10px;
+  margin-left: 60px;
+  transform: translateY(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  width: fit-content;
 }
 .copiedToast.show {
   display: block;
   opacity: 1;
   transform: translateY(0);
+}
+.transition-box {
+  transition: margin-top 0.4s ease;
+}
+.copiedToast.show ~ .transition-box {
+  margin-top: 20px;
 }
 .nav-link:focus {
   border: 1px solid rgb(255, 255, 255);    
@@ -66,30 +85,31 @@
   transition: 0.3s ease;
 }
 .custom-width {
-   width: 300px;
+  width: 300px;
 }
-/* log in box */
 #loginModalLabel {
-   font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", serif;
   font-weight: 700;                               
   font-size: 24px;   
-  color: #403f3f;  
+  color: #565e55;  
   background-color: #fff;                           
 }
-.saf{ 
-  font-family:"Dancing Script",serif;
+.saf { 
+  font-family: "Dancing Script", serif;
 }
-.carousel-item img{
+.carousel-item img {
   height: 100vh;
 }
 .icon-hover i {
   transition: color 0.3s ease;
-  color: rgb(129, 128, 127);
+  color: rgba(116, 155, 110, 0.805);
 }
 .icon-hover:hover i {
   color: #ffc107;
 }
-.sec{font-family: "Lobster", sans-serif;}
+.sec {
+  font-family: "Lobster", sans-serif;
+}
 .custom-btn {
   transition: all 0.3s ease;
   border: 2px solid #ffc107;
@@ -134,7 +154,7 @@
   font-family: "Abril Fatface", serif;
 }
 .btn1{
-  font-family: Georgia, 'Times New Roman', Times, serif;
+ font-family:'Times New Roman', Times, serif;
 }
 .underline-on-hover:hover {
   text-decoration: underline;
@@ -147,11 +167,6 @@
 .accordion-button:not(.collapsed) {
   background-color: transparent !important;
   color: inherit;
-}
-.accordion-button {
-  background-color: transparent;
-  color: #2d491f; 
-  font-weight: 600;
 }
 .sa{
   font-family: "Gravitas One", serif;
@@ -185,16 +200,6 @@
 .card1:hover .card-bg-img {
   transform: scale(0.95); 
 }
-.bg-image-section2 {
-     height: 400px;
-    width: 100%;
-    position: relative;
-    background-image: url('../images/zebra-wild.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-}
 /* ////////////// photoes 9////////////////// */
 .social-card::after {
   content: '';
@@ -206,7 +211,6 @@
   background-color: #ffc107;
   opacity: 0;
   transition: 0.4s;
-
 }
 .social-card:hover::after {
   height: 100%;
@@ -227,6 +231,7 @@
 }
 .social-card{
   border-radius: 8px;
+   box-shadow: 10px 8px 15px rgba(0, 0, 0, 0.4);
 }
 .social-card:hover::before {
   height: 100%;
@@ -238,82 +243,61 @@
 .social-card::before {
   pointer-events: none;
 }
-/* hover/focus/active effect للزرار داخل الكارد */
-.card .btn-animated {
-  transition: background-color 0.25s ease, color 0.25s ease, transform 0.15s ease;
+.btn-animated{
+  margin-right: 30px;
 }
-
-/* override لون btn-warning عند التحويم/التركيز/الضغط */
-.card .btn-animated:hover,
-.card .btn-animated:focus,
-.card .btn-animated:active {
-  background-color: #ffffff !important;
-  border-color: rgb(222, 184, 45) !important;
-  color: #0f0f0f !important;
-  box-shadow: none !important;
-  transform: translateY(-2px);
-}
-
-/* للتأكد من تجربة موبايل: تأثير عند اللمس (active) */
 @media (max-width: 767px) {
-  .card .btn-animated:active {
-    background-color: #ffffff !important;
-    color: #050505 !important;
+  .social-card{
+    max-width: 380px;
+    margin: 10px auto; 
   }
 }
-
-/* تحسين الوصولية: إبراز عند التنقل بالكيبورد */
-.card .btn-animated:focus {
-  outline: 3px solid rgba(255,255,255,0.12);
-  outline-offset: 2px;
+.card-title {
+ font-size: 20px;
+ font-weight: 550;
+ margin-top: -15px;
+ margin-bottom: 20px;
+  font-family: "Story Script", sans-serif;
 }
 /* ///////////// photo 3 card (3)/////////////////// */
 .card1 {
   position: relative;
   height: 500px;
-  color: white;
+  width: 100%;
+  max-width: 350px;
+  color: #fff;
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: all 2s ease;
 }
-.card1:hover .overlay {
-  transform: scale(0.95);
-  transition: transform 0.4s ease;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
-}
-.card-bg-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  border-radius: 30px;
-}
+.card-bg-img,
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); 
-  z-index: 2;
   border-radius: 30px;
-  transition: transform 0.4s ease;
-  transform-origin: center center;
+  object-fit: cover;
+  transition: all 0.4s ease;
+}
+.card-bg-img {
+  z-index: 1;
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+.card1:hover .card-bg-img,
+.card1:hover .overlay {
+  transform: scale(0.93);
+}
+@media (max-width: 767px) {
+  .card1 {
+    max-width: 320px; 
+    margin: 0 auto; 
+  }
 }
 /* /////////////////////////////////////// */
-.bg-image-section {
-    height: 400px;
-    width: 100%;
-    position: relative;
-    background-image: url('../images/beautiful-natural-landscape.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-}
 .gradient-text {
   font-family: "Gravitas One", serif;
   font-weight: bold;
@@ -341,28 +325,7 @@
  transform: translateY(-5px);
  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
-.card-title {
- font-size: 18px;
- font-weight: 600;
- margin-bottom: 10px;
- font-weight: bold;
-}
-.underline-hover:hover {
-  text-decoration: underline;
-}
-a {
- text-decoration: none;
- color: #007bff;
- font-weight: 500;
-}
 /* /////////////////////////////// */
-.hr1{
-    height: 1px;
-    width: 100%;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    background-color:rgba(255, 255, 255, 0.4);
-}
 .avatar {
 height: 80px;
  width: 80px;
@@ -374,36 +337,21 @@ height: 80px;
       
     }
     .custom-header h1 {
-      font-size: 2.5rem; /* تكبير حجم العنوان */
+      font-size: 2.5rem; 
       text-align: center !important;
     }
   }
 /* //////////////////////////////////////////////// */
 .social-card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.4);
   font-family: 'Times New Roman', Times, serif;
 }
 .social-card-hover:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
-
-/* تأثير hover للينك */
-.social-link-hover:hover {
-  text-decoration: underline !important;
-  color: #0056b3 !important;
-}
-/* ///////////////// last section ////////////////////// */
-
-.footer-hover {
-  transition: color 0.3s ease-in-out;
-}
-.footer-hover:hover {
-  color: yellow !important;
-}
-/* موبايل: نخلي الـ hover يشتغل باللمس */
 @media (max-width: 767px) {
-  .footer-hover:active {
-    color: yellow !important;
+  .social-card-hover {
+    max-width: 220px;
+    margin: 5px auto; 
   }
 }
