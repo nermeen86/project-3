@@ -23,6 +23,73 @@
   <link rel="stylesheet" href="./css/style.css">
 
   <title>Document</title>
+  <style>
+    .circle {
+  position: fixed;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.8s ease-out forwards;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+.custom-row {
+  box-shadow: 10px 8px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+}
+.custom-width {
+  width: 300px;
+}
+.saf { 
+  font-family: "Dancing Script", serif;
+}
+.carousel-item img {
+  height: 100vh;
+}
+.sec {
+  font-family: "Lobster", sans-serif;
+}
+.animal{
+  font-family: "DM Serif Display", serif;
+}
+.meet{
+  font-family: "Abril Fatface", serif;
+}
+.btn1{
+ font-family:'Times New Roman', Times, serif;
+}
+.sa{
+  font-family: "Gravitas One", serif;
+}
+.card-title {
+ font-size: 20px;
+ font-weight: 550;
+ margin-top: -15px;
+ margin-bottom: 20px;
+  font-family: "Story Script", sans-serif;
+}
+.btn-animated{
+  margin-right: 30px;
+}
+.card-icon {
+ font-size: 60px;
+}
+.avatar {
+height: 80px;
+ width: 80px;
+ object-fit: contain;
+}
+.social-card-hover {
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.4);
+  font-family: 'Times New Roman', Times, serif;
+}
+  </style>
 </head>
 
 <body> 
